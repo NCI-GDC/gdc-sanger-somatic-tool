@@ -50,3 +50,53 @@ optional arguments:
   --output_prefix OUTPUT_PREFIX
                         Prefix for all outputs.
 ```
+
+### `extract_ascat.py`
+
+Extracts the caveman copynumber file from the ASCAT directory and reformats it to the GDC standard.
+Extracts two values from the ASCAT samplestatistics file and prints them to stdout.
+
+```
+[INFO] [20190711 18:21:39] [extract_ascat] - --------------------------------------------------------------------------------
+[INFO] [20190711 18:21:39] [extract_ascat] - extract_ascat.py
+[INFO] [20190711 18:21:39] [extract_ascat] - Program Args: scripts/extract_ascat.py -h
+[INFO] [20190711 18:21:39] [extract_ascat] - --------------------------------------------------------------------------------
+usage: extract_ascat.py [-h] {reformat_copynumber,extract_stats} ...
+
+Tool to process Sanger WGS pipeline TAR output and produce GDC standard files
+and metrics.
+
+positional arguments:
+  {reformat_copynumber,extract_stats}
+
+optional arguments:
+  -h, --help            show this help message and exit
+
+[INFO] [20190711 18:22:07] [extract_ascat] - --------------------------------------------------------------------------------
+[INFO] [20190711 18:22:07] [extract_ascat] - extract_ascat.py
+[INFO] [20190711 18:22:07] [extract_ascat] - Program Args: scripts/extract_ascat.py reformat_copynumber -h
+[INFO] [20190711 18:22:07] [extract_ascat] - --------------------------------------------------------------------------------
+usage: extract_ascat.py reformat_copynumber [-h] [--input INPUT]
+                                            [--output OUTPUT]
+                                            [--gdcaliquot GDCALIQUOT]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --input INPUT, -i INPUT
+                        path to file output from Sanger pipeline
+  --output OUTPUT, -o OUTPUT
+                        path for output file
+  --gdcaliquot GDCALIQUOT, -g GDCALIQUOT
+                        GDC Aliquot ID used to generate the file
+
+[INFO] [20190711 18:22:34] [extract_ascat] - --------------------------------------------------------------------------------
+[INFO] [20190711 18:22:34] [extract_ascat] - extract_ascat.py
+[INFO] [20190711 18:22:34] [extract_ascat] - Program Args: scripts/extract_ascat.py extract_stats -h
+[INFO] [20190711 18:22:34] [extract_ascat] - --------------------------------------------------------------------------------
+usage: extract_ascat.py extract_stats [-h] [--input INPUT]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --input INPUT, -i INPUT
+                        path to file output from Sanger pipeline
+```
