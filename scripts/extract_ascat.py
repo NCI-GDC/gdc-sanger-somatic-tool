@@ -7,6 +7,7 @@ Extract and Process ASCAT outputs in the Sanger TAR file.
 """
 
 import argparse
+import json
 import logging
 import sys
 import tarfile
@@ -72,7 +73,7 @@ def extract_stats(args):
                    output_json['ploidy'] = float(line.strip().decode('utf-8').split(' ')[1])
        finally:
            fobj.close()   
-    print(output_json)
+    print(json.dumps(output_json))
 
 def setup_logger():
     """
