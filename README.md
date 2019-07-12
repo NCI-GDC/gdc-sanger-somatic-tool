@@ -100,3 +100,24 @@ optional arguments:
   --input INPUT, -i INPUT
                         path to file output from Sanger pipeline
 ```
+
+### `extract_brass_bedpe.py`
+
+Extracts the brass bedpe file, formats the header and outputs bgzipped + tabix indexed file.
+
+```
+ extract_brass_bedpe.py -h
+[INFO] [20190712 16:15:18] [extract_brass_bedpe] - --------------------------------------------------------------------------------
+[INFO] [20190712 16:15:18] [extract_brass_bedpe] - extract_brass_bedpe.py
+[INFO] [20190712 16:15:18] [extract_brass_bedpe] - Program Args: extract_brass_bedpe.py -h
+[INFO] [20190712 16:15:18] [extract_brass_bedpe] - --------------------------------------------------------------------------------
+usage: Utility for extracting brass bedpe file from sanger results archive.
+       [-h] --results_archive RESULTS_ARCHIVE --output_prefix OUTPUT_PREFIX
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --results_archive RESULTS_ARCHIVE
+                        Sanger results tar archive.
+  --output_prefix OUTPUT_PREFIX
+                        Prefix for all outputs.
+```
