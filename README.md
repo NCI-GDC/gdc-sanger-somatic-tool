@@ -143,3 +143,34 @@ optional arguments:
   --output_prefix OUTPUT_PREFIX
                         Prefix for all outputs.
 ```
+
+### Process Pindel CWL
+
+Normalize and filter Pindel VCF.
+
+```
+cwltool process_pindel.cwl -h
+
+process_pindel.cwl
+       [-h] [--min_tumor_alt_dp MIN_TUMOR_ALT_DP]
+       [--min_tumor_alt_dp_tag MIN_TUMOR_ALT_DP_TAG] --output_prefix
+       OUTPUT_PREFIX --pindel_vcf PINDEL_VCF --reference REFERENCE
+       [--usedecoy]
+       [job_order]
+
+positional arguments:
+  job_order             Job input json file
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --min_tumor_alt_dp MIN_TUMOR_ALT_DP
+                        If the tumor alt depth is less than this value filter
+                        it
+  --min_tumor_alt_dp_tag MIN_TUMOR_ALT_DP_TAG
+                        The filter tag to use for the min_tumor_alt_dp filter
+  --output_prefix OUTPUT_PREFIX
+  --pindel_vcf PINDEL_VCF
+  --reference REFERENCE
+  --usedecoy            If specified, it will include all the decoy sequences
+                        in the faidx.
+```
