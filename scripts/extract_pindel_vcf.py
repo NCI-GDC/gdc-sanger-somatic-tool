@@ -2,6 +2,7 @@
 Extracts and processes the pindel VCF file.
 
 @author: Kyle Hernandez
+@Updated: Shenglai Li
 """
 import os
 import time
