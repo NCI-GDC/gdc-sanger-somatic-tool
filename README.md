@@ -51,6 +51,28 @@ optional arguments:
                         Prefix for all outputs.
 ```
 
+### `extract_pindel_vcf.py`
+
+Extracts the Pindel VCF and renames TUMOUR to TUMOR. The final outputs are a
+bgzipped vcf and its index.
+
+```
+extract_pindel_vcf.py -h
+[INFO] [20190715 15:19:48] [extract_pindel_vcf] - --------------------------------------------------------------------------------
+[INFO] [20190715 15:19:48] [extract_pindel_vcf] - extract_pindel_vcf.py
+[INFO] [20190715 15:19:48] [extract_pindel_vcf] - Program Args: scripts/extract_pindel_vcf.py -h
+[INFO] [20190715 15:19:48] [extract_pindel_vcf] - --------------------------------------------------------------------------------
+usage: Utility for extracting pindel files from sanger results archive.
+       [-h] --results_archive RESULTS_ARCHIVE --output_prefix OUTPUT_PREFIX
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --results_archive RESULTS_ARCHIVE
+                        Sanger results tar archive.
+  --output_prefix OUTPUT_PREFIX
+                        Prefix for all outputs.
+```
+
 ### `extract_ascat.py`
 
 Extracts the caveman copynumber file from the ASCAT directory and reformats it to the GDC standard.
