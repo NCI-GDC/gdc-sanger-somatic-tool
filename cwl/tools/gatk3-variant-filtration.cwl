@@ -25,9 +25,7 @@ inputs:
     inputBinding:
       prefix: -R
       position: 1
-    secondaryFiles:
-      - ".fai"
-      - "^.dict"
+    secondaryFiles: [.fai, ^.dict]
 
   min_tumor_alt_dp:
     type: int?
@@ -60,7 +58,6 @@ outputs:
     doc: The filtered VCF file
     outputBinding:
       glob: $(inputs.output_filename)
-    secondaryFiles:
-      - ".tbi"
+    secondaryFiles: [.tbi]
 
 baseCommand: [java, -Xmx4G, -jar, /bin/GenomeAnalysisTK.jar, -T, VariantFiltration, --disable_auto_index_creation_and_locking_when_reading_rods]

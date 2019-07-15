@@ -23,8 +23,7 @@ inputs:
     inputBinding:
       prefix: -r
       position: 1
-    secondaryFiles:
-      - ".fai"
+    secondaryFiles: [.fai, ^.dict]
 
   output_vcf:
     type: string
