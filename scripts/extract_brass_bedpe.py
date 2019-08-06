@@ -28,7 +28,7 @@ def format_header(line):
     """
     cols = []
     for n, item in enumerate(line.replace('#', '').strip().split('\t')):
-        if item == 'name/id':
+        if item == 'id/name':
             cols.append('name')
         elif item == 'brass_score':
             cols.append('score')
