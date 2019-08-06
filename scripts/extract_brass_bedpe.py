@@ -62,6 +62,7 @@ def process_bedpe(archive, bedpe, bedpe_index, output_prefix):
     try:
         meta_line = None
         process_header = False
+        hdr = []
         for line in reader:
             line = line.decode('utf-8')
             if line.startswith('#'):
@@ -74,7 +75,9 @@ def process_bedpe(archive, bedpe, bedpe_index, output_prefix):
                     writer.write(('#' + '\t'.join(hdr) + '\n').encode('utf-8'))
                     process_header = True
 
-                new_line = line + '\n'
+                dat = dict(zip(hdr, line.rstrip('\r\n').split('\t')))
+                dat['brass_notation'] = dat['brass_notation'].replace('Chr.chr', 'chr')
+                new_line = "\t".join([dat[i] for i in hdr]) + '\n'
                 writer.write(new_line.encode('utf-8'))
     finally:
         writer.close()
