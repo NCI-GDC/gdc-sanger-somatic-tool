@@ -1,9 +1,10 @@
 FROM python:3.5
 
+# Installing dependencies
+COPY requirements.txt /opt/
+RUN pip install -r /opt/requirements.txt
+
 # Copy over source
 COPY scripts/ /opt/ 
-COPY requirements.txt /opt/
-WORKDIR /opt
 
-# Installing dependencies
-RUN pip install -r requirements.txt
+WORKDIR /opt
