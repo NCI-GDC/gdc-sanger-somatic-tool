@@ -42,15 +42,16 @@ def extract_bam_header(bampath, aliquot_id, out_file):
             new_header = True 
 
         if new_header:
-            logger.info("Detected RG problems, will create new header with SM {0}".format(aliquot_id))
-            for key in bam.header:
+            logger.info("Detected RG problems, will create new header with SM {0}".format(
+                aliquot_id))
+            for key, vals in bam.header.items():
                 if key not in fix_header: fix_header[key] = [] 
                 if key == 'RG':
-                    for item in bam.header[key]:
+                    for item in vals: 
                         item['SM'] = aliquot_id 
                         fix_header[key].append(item) 
                 else:
-                    fix_header[key] = bam.header[key]
+                    fix_header[key] = vals 
             obam = pysam.AlignmentFile(out_file, mode='w', header=fix_header) 
             obam.close()
 
