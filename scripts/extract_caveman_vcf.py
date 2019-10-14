@@ -54,6 +54,12 @@ def process_vcf(archive, vcf, vcf_index, output_prefix):
                 new_line = line.replace('TUMOUR', 'TUMOR') + '\n'
                 writer.write(new_line.encode('utf-8'))
             else:
+                # BINF-306: fix rare case of alt == ref in caveman vcf.
+                cols = line.split('\t')
+                if cols[3] == cols[4]:
+                    logger.warn("Removing loci {0}:{1} where ref and alt alleles are same: {2} - {3}".format(
+                        cols[0], cols[1], cols[3], cols[4]))
+                    continue
                 new_line = line + '\n'
                 writer.write(new_line.encode('utf-8'))
     finally:
