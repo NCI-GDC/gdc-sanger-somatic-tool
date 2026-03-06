@@ -1,4 +1,4 @@
-FROM python:3.5
+FROM python:3.13.12
 
 # Installing dependencies
 COPY requirements.txt /opt/
